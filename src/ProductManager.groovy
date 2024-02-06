@@ -14,4 +14,13 @@ class ProductManager {
             println("Name: ${product.name} | Price: \$${product.price} | Quantity: ${product.quantity}")
         }
     }
+
+    void trackStockLevels() {
+        println("\nStock Levels:")
+        inventory.each { product ->
+            if (product.quantity <= 10) {
+                println("Low stock alert for ${product.name}! Quantity: ${product.quantity}")
+            }
+        }
+    }
 }
