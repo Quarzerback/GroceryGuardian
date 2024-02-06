@@ -3,15 +3,17 @@ class Main {
   static void main(String[] args) {
     ProductManager productManager = new ProductManager()
 
-    // Test adding products
-    productManager.addProduct("Milk", 2.49, 5)
-    productManager.addProduct("Bread", 1.99, 15)
-    productManager.addProduct("Eggs", 1.79, 25)
+    // Test adding products and suppliers
+    productManager.addSupplier("ABC Supplier", "123-456-7890")
+    productManager.addProduct("Milk", 2.49, 5, productManager.suppliers[0])
+    productManager.addProduct("Bread", 1.99, 15, productManager.suppliers[0])
 
-    // Test displaying inventory
+    // Test displaying inventory and suppliers
     productManager.displayInventory()
+    productManager.displaySuppliers()
 
-    // Test tracking stock levels
-    productManager.trackStockLevels()
+    // Test receiving stock
+    productManager.receiveStock("Milk", 10)
+    productManager.displayInventory()
   }
 }
